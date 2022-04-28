@@ -1807,6 +1807,10 @@ main () {
             return 0;
         }
     }
+    if(isOperator){
+        printf("[ERROR]: Representation does not satisfy infix format.\n");
+        return 0;
+    }
     for(int i = 0; i < cur; i++){
         printf("%c", ans[i]);
     }
