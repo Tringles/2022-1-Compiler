@@ -7,11 +7,12 @@ extern double yylval;
 %%
 
 [0-9]+(\.[0-9]+)?(E[+\-]?[0-9]+)? {
-		yylval=atof(yytext);
+		yylval = atof(yytext);
 		return NUM;
 	}
 [ \t]+ ;
-[\n] return 0;
+[\n] return *yytext;
+[;] return *yytext;
 . return yytext[0];
 
 %%

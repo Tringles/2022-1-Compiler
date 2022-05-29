@@ -12,11 +12,22 @@
 
 %%
 
+lines:
+		lines stmt
+		|
+		lines '\n'
+		|
+		;
+
+stmt:
+		expr ';'
+		;
+
 expr:
 		E{
-		printf("%f\n", $$);
-		return 0;
-		};
+		printf("%g\n", $$);
+		}
+		;
 
 E:
 		E '+' E{
@@ -46,8 +57,7 @@ E:
 		NUM{
 			$$ = $1;
 		}
-
-;
+		;
 
 %%
 
